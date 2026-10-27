@@ -1,0 +1,214 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/*End of CSS Reset*/
+
+/*Weather App CSS*/
+*{
+    margin:0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #222;
+}
+
+.card{
+    width:90%;
+    max-width:470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color:#fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.search{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input{
+    border: 0;
+    outline:0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius:30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search button{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding-left: 21px;
+}
+
+.search button img{
+    width: 16px;
+}
+
+.weather{
+    display: none;
+}
+
+.weather *{
+    margin:auto;
+}
+
+.weather.icon{
+    width: 170px;
+    margin-top: 30px;
+}
+
+.weather h1{
+    font-size: 80px;
+    font-width: 500;
+}
+
+.weather h2{
+    font-size: 45px;
+    font-width: 400;
+    margin-top: -10px;
+}
+
+.details{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top:50px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.col p{
+    font-size: 15px;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: 2px;
+}
+
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    color: crimson;
+    margin-top: 10px;
+    display:none;
+}
+
+@media screen and (max-width:450px){
+    .card{
+        width:100%;
+        max-width:320px;
+        margin: 80px auto 0;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .search{
+        display:flex;
+        flex-wrap: wrap;
+        gap: 16px
+    }
+
+    .search input{
+        padding: 10px 15px;
+        width: 100px;
+        max-width: 300px;
+        height: 100px;
+        flex: 1;
+        margin-right: 13px;
+    }
+
+    .search button img{
+        width: 30px;
+    }
+
+    .details{
+        display:block;
+        padding: 0 20px;
+        margin-top:20px;
+    }
+
+    .col{
+        margin-top: 20px;
+    }
+}
